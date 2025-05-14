@@ -1,33 +1,5 @@
 # 📺 NGINX - RTMP Live Streaming Server
 
-This project provides a setup for streaming live video using the **NGINX** server and the `nginx-rtmp-module`. It supports RTMP streaming and HLS (HTTP Live Streaming).
-
----
-
-## 🖥️ System Requirements
-
-- **OS**: Ubuntu 24.04.2 LTS
-- **Architecture**: 64-bit (x86_64 or ARM64)
-- **Memory**: Minimum 1GB RAM
-- **Disk**: Minimum 5GB available space
-- **Network**: Public IP address recommended for external access
-
----
-
-## 📡 Project Overview
-
-This project consists of various live streaming methods using the **NGINX** server.
-
-### ✅ Currently Included
-
-- **NGINX - RTMP Live Streaming Server**  
-  Initial implementation focused on setting up an RTMP live streaming server using `nginx-rtmp-module`.  
-  📂 All setup guides, configuration files, and related code can be found in the [`NGINX - RTMP Live Streaming Server`](./NGINX%20-%20RTMP%20Live%20Streaming%20Server) folder.
-
-> 💡 Future updates may include support for HLS, SRT, WebRTC, and other streaming protocols.
-
----
-
 ## ⚙️ Installation Steps
 
 ### 1. Install Dependencies
@@ -150,17 +122,17 @@ Below is a breakdown of the RTMP-related section in the NGINX configuration file
 
 ### 🎬 RTMP Application (`live`)
 
-This defines the streaming endpoint used in your streaming URL (e.g., `rtmp://your-server-ip/live/streamkey`).  
- `live on;`  
- Enables real-time live streaming. Viewers can watch the stream as it is being pushed.  
- `record off;`  
- Disables stream recording on the server. No stream content will be saved to disk.  
- `allow publish all;`  
- Allows any client to publish (push) a stream.  
- ⚠️ Note: In production, restrict this to specific IPs or users for security.  
- `allow play all;`  
- Allows any client to play (view) a stream.  
- Can also be restricted based on IP ranges or token authentication.
+- This defines the streaming endpoint used in your streaming URL (e.g., `rtmp://your-server-ip/live/streamkey`).  
+  `live on;`
+- Enables real-time live streaming. Viewers can watch the stream as it is being pushed.  
+  `record off;`
+- Disables stream recording on the server. No stream content will be saved to disk.  
+  `allow publish all;`
+- Allows any client to publish (push) a stream.
+  > ⚠️ Note: In production, restrict this to specific IPs or users for security.  
+  >  `allow play all;`
+- Allows any client to play (view) a stream.
+- Can also be restricted based on IP ranges or token authentication.
 
 ### 7. Test the Configuration
 
@@ -278,7 +250,7 @@ http://<your-server-ip>/hls/test.m3u8
 ## 💡 Usage
 
 This script automates the setup of an NGINX RTMP server on Ubuntu.  
-Save the file as install.sh, then run:
+Download the `install.sh` file and run the following commands to automate the installation:
 
 ```bash
 chmod +x install.sh
