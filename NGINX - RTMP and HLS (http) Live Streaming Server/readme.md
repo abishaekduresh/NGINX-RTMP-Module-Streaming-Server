@@ -280,19 +280,19 @@ rtmp://<your-server-ip>/live
 Stream key: `test`
 
 ```bash
-rtmp://<your-server-ip>/live/test
+rtmp://<your-server-ip>/<app-name>/<stream-key>
 ```
 
 ### ▶️ Playback via RTMP (e.g., VLC)
 
 ```bash
-rtmp://<your-server-ip>/live/test
+rtmp://<your-server-ip>/<app-name>/<stream-key>
 ```
 
 ### ▶️ Playback via HLS (e.g., Video.js, VLC, browser)
 
 ```bash
-http://<your-server-ip>/hls/test.m3u8
+http://<your-server-ip>/hls/<app-name>/<stream-key>.m3u8
 ```
 
 ## 💡 Usage
