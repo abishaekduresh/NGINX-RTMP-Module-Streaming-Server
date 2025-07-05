@@ -147,22 +147,7 @@ You should see the following output:
 > nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
 > nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
 
-### 8. Create the HLS Directory
-
-Create the directory for storing HLS segments:
-
-```bash
-sudo mkdir -p /usr/local/nginx/html/hls
-```
-
-Set permissions for NGINX to write to this directory:
-
-```bash
-sudo chown -R www-data:www-data /usr/local/nginx/html/hls
-sudo chmod -R 755 /usr/local/nginx/html/hls
-```
-
-### 9. Set Up Systemd Service for NGINX
+### 8. Set Up Systemd Service for NGINX
 
 Create a systemd service file for NGINX to manage its startup and restart:
 
@@ -195,13 +180,12 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 ```
 
-### 10. Configure Firewall (if necessary)
+### 9. Configure Firewall (if necessary)
 
 Ensure that the RTMP (port 1935), HTTP (port 80) and SSH (port 22) ports are open:
 
 ```bash
 sudo ufw allow 1935/tcp
-sudo ufw allow 80/tcp
 sudo ufw allow 22/tcp
 ```
 
@@ -241,10 +225,10 @@ Stream key: `test`
 rtmp://<your-server-ip>/live/test
 ```
 
-### Playback via HLS (e.g., Video.js, VLC, browser)
+### ▶️ Playback via VLC
 
 ```bash
-http://<your-server-ip>/hls/test.m3u8
+rtmp://<your-server-ip>/live/test
 ```
 
 ## 💡 Usage
